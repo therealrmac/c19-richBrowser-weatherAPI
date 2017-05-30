@@ -1,0 +1,16 @@
+{{#each list}}
+	<div class="card col-md-4">
+		<div class="weatherContent">
+			<h2>{{dt_txt}}</h2>
+			<span class="temp card-title">The temperature will be {{main.temp}} degrees farenhiet</span>
+			<br>
+			<span class="pressure">The air pressure is {{main.pressure}} with a wind speed of {{wind.speed}}</span>
+			<br>
+			{{#each weather}}
+			<span class="condition">And will be {{description}}
+			{{/each}}
+	</div>
+	</div>
+	{{/each}}
+</div>
+

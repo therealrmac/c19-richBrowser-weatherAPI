@@ -1,7 +1,7 @@
 "use strict";
 
 let owapi= require("./apiGetter");
-let owapiData= owapi();
+let owapiData= owapi.getKey();
 
 var owapiConfig={
     owapiKey: owapiData.apiKey,

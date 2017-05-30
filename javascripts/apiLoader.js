@@ -1,7 +1,7 @@
 "use strict";
 
 let weatherDB= require("./apiConfig");
-
+let $= require("jquery");
 
 //By zip code
 function getWeather(code){
@@ -14,6 +14,16 @@ function getWeather(code){
     });
 }
 
+function getForecast(code){
+    return new Promise(function(resolve,reject){
+        $.ajax({
+            url: `${weatherDB.getAPIsettings().zipFor}${code}${weatherDB.getAPIsettings().forEnd}`
+        }).done(function(event){
+            resolve(event);
+        });
+    });
+}
 
 
-module.exports= {getWeather};
+
+module.exports= {getWeather, getForecast};

@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="card col-md-4">
+		<div class="weatherContent">
+			<span class="temp card-title">The temperature of {{name}} is {{main.temp}} degrees farenhiet</span>
+			<br>
+			<span class="pressure">The air pressure is {{main.pressure}} with a wind speed of {{wind.speed}}</span>
+			<br>
+			{{#each weather}}
+			<span class="condition">And it is currently {{description}}
+			{{/each}}
+			<p class="threeDay"><a href="#">3 day forecast</a></p>
+			<p class="fiveDay"><a href="#">5 day forecast</a></p>
+	</div>
+	</div>
+</div>
