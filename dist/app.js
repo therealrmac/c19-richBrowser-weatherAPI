@@ -65,7 +65,6 @@ function getForecast(code){
 }
 
 
-
 module.exports= {getWeather, getForecast};
 
 },{"./apiConfig":1,"jquery":26}],4:[function(require,module,exports){
@@ -99,17 +98,6 @@ let temperature= require("./builder");
 let Handlebars= require("hbsfy/runtime");
 
 
-Handlebars.registerHelper("foreach",function(arr,options) {
-    if(options.inverse && !arr.length)
-        return options.inverse(this);
-
-    return arr.map(function(item,index) {
-        item.$index = index;
-        item.$first = index === 0;
-        item.$last  = index === arr.length-1;
-        return options.fn(item);
-    }).join('');
-});
 
 $(document).on("click", ".submit", function(data){
     var code= $(".zip").val();
@@ -153,11 +141,13 @@ $(document).on("click", ".threeDay", function(event){
      console.log("value of zip is", code);
      al.getForecast(code)
      .then(function(data){
+        while(data.list.length >20){
+            data.list.pop();
+        }
         console.log("forecast data is",data);
         temperature.populateDivTwo(data);
      });
 });
-
 
 
 

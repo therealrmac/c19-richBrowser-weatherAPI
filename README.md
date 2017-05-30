@@ -1,4 +1,4 @@
-# Weather API second upload and I have everything working but to be able to display a 3 day forecast
+# Weather API Third upload and I have the 3 day forecast working now
 
 OpenWeatherMap's temperature results are defaulted to display in Kelvin
 

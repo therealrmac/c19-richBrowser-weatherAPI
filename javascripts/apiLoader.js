@@ -25,5 +25,4 @@ function getForecast(code){
 }
 
 
-
 module.exports= {getWeather, getForecast};
